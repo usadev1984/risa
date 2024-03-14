@@ -36,6 +36,23 @@ def main():
             continue
         log_warn(f)
 
+        # prompt user
+        try:
+            while(not (choice := input("reverse search '%s'? (y/n)\n" % f)
+                       .lower()) in ("y", "n")):
+                pass
+        except (EOFError, KeyboardInterrupt):
+            exit()
+
+        if choice == "y":
+            pass
+        elif choice == "n":
+            continue
+        else:
+            log_error("invalid choice: '{}'".format(choice))
+
+        print(choice)
+
 
 if __name__ == "__main__":
     main()
