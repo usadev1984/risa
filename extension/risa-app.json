@@ -1,0 +1,7 @@
+{
+  "name": "risa",
+  "description": "app manifest",
+  "path": "/bin/gimp",
+  "type": "stdio",
+  "allowed_extensions": ["risa@extension.org"]
+}

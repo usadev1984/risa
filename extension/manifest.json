@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "risa extension",
+    "version": "0.0.1",
+
+    "description": "adds a red border to all webpages matching mozilla.org.",
+
+    "icons": {
+        "48": "icons/border-48.png"
+        // "96": "icons/border-48.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.mozilla.org/*"],
+            "js": ["risa.js"]
+        }
+    ],
+  "background": {
+    "scripts": ["background.js"],
+      //"persistent": false,
+      "type": "module"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "risa@extension.org",
+      "strict_min_version": "50.0"
+    }
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+}
